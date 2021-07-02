@@ -1,0 +1,32 @@
+bodyHeight(s, c)
+    if (c)
+        height 'calc(100vh - %s - %s - %s - %s)' % (var(--header-height) var(--footer-height) var(--toolbar-height) s)
+    else
+        height 'calc(100vh - %s - %s - %s)' % (var(--header-height) var(--footer-height) s)
+
+.dms-header
+    height var(--header-height)
+
+.dms-body-height-none
+    bodyHeight(0px, false)
+
+.dms-body-height-sm
+    bodyHeight($space-base, false)
+
+.dms-body-height-md
+    bodyHeight($space-base * 2, false)
+
+.dms-body-height-lg
+    bodyHeight($space-base * 3, false)
+
+.dms-body-height-none-with-bar
+    bodyHeight(0px, true)
+
+.dms-body-height-sm-with-bar
+    bodyHeight($space-base, true)
+
+.dms-body-height-md-with-bar
+    bodyHeight($space-base * 2, true)
+
+.dms-body-height-lg-with-bar
+    bodyHeight($space-base * 3, true)

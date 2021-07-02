@@ -1,0 +1,31 @@
+// It's highly recommended to change the default colors
+// to match your app's branding.
+
+$primary   = #027BE3
+$secondary = #26A69A
+$accent    = #9C27B0
+
+$dark      = #1D1D1D
+
+$positive  = #21BA45
+$negative  = #C10015
+$info      = #31CCEC
+$warning   = #F2C037
+
+// 自定义内容
+$primary-text = #fff
+
+$cancel = blend(rgba($primary, 0.5), #9DAAB4)
+$scrollbarTrack = invert($primary)
+$scrollbarThumb = darken($primary, 50%)
+$scrollbarHover = lighten($scrollbarThumb, 5%)
+:root
+    --q-color-cancel $cancel
+    --q-color-scrollbar-track $scrollbarTrack
+    --q-color-scrollbar-thumb $scrollbarThumb
+    --q-color-scrollbar-hover $scrollbarHover
+    --header-height 48px
+    --footer-height 0px
+    --toolbar-height 30px
+
+@import '~quasar-variables-styl'
