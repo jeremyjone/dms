@@ -6,6 +6,8 @@
 
 Vue + Quasar 打造的类资源管理器的资料管理系统。
 
+[Demo](https://desktop.jeremyjone.com/dms)
+
 ## 功能
 
 - TS 编写

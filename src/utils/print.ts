@@ -1,5 +1,5 @@
 export const printLogo = () => {
-  const beast = `
+  const jeremyjone = `
   ███████╗  ███████╗  ███████╗  ███████╗  ███╗      ███╗  ██╗   ██╗
      ██╔═╝  ██╔════╝  ██╔══██║  ██╔════╝  ████╗    ████║   ██╗ ██╔╝
      ██║    ██████╗   ███████║  ██████╗   ██║██╗  ██║██║    ████╔╝
@@ -9,7 +9,7 @@ export const printLogo = () => {
   `;
 
   // ASCII - ANSI Shadow
-  const text = `${process.env.NODE_ENV === "development" ? beast : ""}\n
+  const text = `${jeremyjone}\n
   \n\tData Management System ${require("@/../package.json").version}
   \t©${new Date().getFullYear()} By JeremyJone丶小鹰
   \n`;
