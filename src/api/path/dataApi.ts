@@ -30,7 +30,11 @@ export function GetData(
   q?: DataParameter
 ) {
   return getData(
-    TEST_DATA.filter(x => x.libraryId === libraryId && x.parentId === parentId)
+    TEST_DATA.filter(
+      x =>
+        x.libraryId === libraryId &&
+        (parentId === -1 || x.parentId === parentId)
+    )
   );
 }
 

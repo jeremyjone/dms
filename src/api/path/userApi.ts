@@ -10,15 +10,17 @@ import {
 import { Response, TO } from "@/models/common";
 import { PermissionItem, RoleItem } from "@/models/role";
 import { encrypt } from "@/utils/business";
-import { TEST_PERMISSIONS, TEST_ROLES, TEST_USER } from "../testData/user";
+import { TEST_PERMISSIONS, TEST_ROLES, TEST_USERS } from "../testData/user";
+import { LocalStorage } from "quasar";
+import { vars } from "@/utils/vars";
 
 export function Login(data: LoginInfo): TO<Response<UserLoginItem>> {
   if (
-    data.username === TEST_USER.username &&
+    data.username === TEST_USERS[0].username &&
     data.password === encrypt("qaz123")
   ) {
     return getData({
-      ...TEST_USER,
+      ...TEST_USERS[0],
       token: "my_token"
     });
   } else {
@@ -37,11 +39,15 @@ export function ExtLogin(data: ExtLoginInfo): TO<Response<UserLoginItem>> {
 }
 
 export function GetUser(): TO<Response<UserItem>> {
-  return getData(TEST_USER);
+  return getData(
+    TEST_USERS.find(
+      x => x.id === (LocalStorage.getItem(vars.keys.userId) ?? 1)
+    ) ?? ({} as UserItem)
+  );
 }
 
 export function GetUsers(): TO<Response<Array<UserItem>>> {
-  return getData([TEST_USER]);
+  return getData(TEST_USERS);
 }
 
 export function CreateUser(user: UserAddItem): TO<Response<UserItem>> {
@@ -57,7 +63,7 @@ export function UpdateUser(
   id: number,
   user: UserUpdateItem
 ): TO<Response<UserItem>> {
-  return getData(TEST_USER);
+  return getData(TEST_USERS.find(x => x.id === id) ?? ({} as UserItem));
 }
 
 export function DeleteUser(ids: number[]): TO<Response<string>> {

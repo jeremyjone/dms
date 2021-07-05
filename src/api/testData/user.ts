@@ -49,9 +49,17 @@ export const TEST_ROLES = [
   }
 ];
 
-export const TEST_USER = {
-  id: 1,
-  username: "user1",
-  nickname: "USER1",
-  role: TEST_ROLES[0]
-};
+export const TEST_USERS = [
+  {
+    id: 1,
+    username: "user1",
+    nickname: "USER1",
+    role: TEST_ROLES[0]
+  },
+  {
+    id: 2,
+    username: "user2",
+    nickname: "USER2",
+    role: TEST_ROLES[2]
+  }
+];
