@@ -104,7 +104,6 @@ const actions: ActionTree<VUserState, VRootState> = {
   },
 
   SetToken(ctx, token: string) {
-    console.log("set token", token);
     ctx.commit(SET_TOKEN, token);
     LocalStorage.set(vars.keys.token, token);
   },

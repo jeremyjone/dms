@@ -29,7 +29,7 @@ const routes: Array<RoutePoint> = [
     children: [
       {
         path: RoutePath.library,
-        name: "Home",
+        name: "Library",
         meta: {
           requireAuth: true,
           title: "资料库"
@@ -152,7 +152,7 @@ router.beforeEach(async (to, from, next) => {
     if ([RoutePath.login, RoutePath.logout, "/callback"].includes(to.path)) {
       next();
     } else {
-        next({ path: RoutePath.login, query: { redirect: to.fullPath } });
+      next({ path: RoutePath.login, query: { redirect: to.fullPath } });
     }
   }
 });
